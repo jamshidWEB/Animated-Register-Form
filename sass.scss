@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+$clr: #0ab3ff;
+$bgbody: #1c2630;
+$bgform: #29313c;
+$event: #999;
+
+@mixin flex {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin text {
+    text-transform: uppercase;
+
+}
+.InputBox input:focus,
+.InputBox input:valid {
+    border-bottom: 2px solid $clr;
+}
+.InputBox input:focus ~ label span,
+.InputBox input:valid ~ label span{
+    color: $clr;
+    letter-spacing: .3em;
+    transform: translateY(-25px);
+    font-weight: 800;
+    font-size: 11px;
+
+}
+
+body {
+    @include flex();
+    min-height: 100vh;
+    background: $bgbody;
+
+    form {
+        background: $bgform;
+        padding: 60px 80px 60px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+
+        h2 {
+            color: #fff;
+            font-weight: 500;
+            @include text();
+            font-style: 1.25em;
+            letter-spacing: 0.1em;
+            border-bottom: 50px;
+        }
+
+        .InputBox {
+            position: relative;
+            width: 300px;
+            margin-bottom: 40px;
+
+            input {
+                position: relative;
+                width: 100%;
+                padding: 10px 0;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid $event;
+                outline: none;
+                color: #fff;
+                font-size: 1em;
+                @include text();
+                letter-spacing: 0.15em;
+            }
+
+            label {
+                position: absolute;
+                left: 0;
+                padding: 10px 0;
+                pointer-events: none;
+                color: $event;
+                @include text();
+                span{
+                    position: relative;
+                    display: inline-block;
+                    letter-spacing:  0.05em;
+                    transition: .2s ease-in-out;
+                }
+            }
+        }
+
+    
+        .InputBox input[type="submit"] {
+            background: $clr;
+            padding: 15px;
+            border-radius: 50px;
+            color: $bgbody;
+            font-weight: 600;
+            font-style: 0.15em;
+            @include text();
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .InputBox input[type="submit"]:hover {
+            letter-spacing: 0.55em;
+            color: #fff;
+            border-radius: 12px;
+        }
+
+        p {
+            color: #fff;
+            @include text();
+            margin-bottom: -18px;
+
+            a {
+                color: $clr;
+                font-weight: 500;
+            }
+        }
+
+    }
+    
+}

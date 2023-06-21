@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.InputBox input:focus,
+.InputBox input:valid {
+  border-bottom: 2px solid #0ab3ff;
+}
+
+.InputBox input:focus ~ label span,
+.InputBox input:valid ~ label span {
+  color: #0ab3ff;
+  letter-spacing: .3em;
+  transform: translateY(-25px);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1c2630;
+}
+
+body form {
+  background: #29313c;
+  padding: 60px 80px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+body form h2 {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-style: 1.25em;
+  letter-spacing: 0.1em;
+  border-bottom: 50px;
+}
+
+body form .InputBox {
+  position: relative;
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+body form .InputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #999;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+body form .InputBox label {
+  position: absolute;
+  left: 0;
+  padding: 10px 0;
+  pointer-events: none;
+  color: #999;
+  text-transform: uppercase;
+}
+
+body form .InputBox label span {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  transition: .2s ease-in-out;
+}
+
+body form .InputBox input[type="submit"] {
+  background: #0ab3ff;
+  padding: 15px;
+  border-radius: 50px;
+  color: #1c2630;
+  font-weight: 600;
+  font-style: 0.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: .5s;
+}
+
+body form .InputBox input[type="submit"]:hover {
+  letter-spacing: 0.55em;
+  color: #fff;
+  border-radius: 12px;
+}
+
+body form p {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: -18px;
+}
+
+body form p a {
+  color: #0ab3ff;
+  font-weight: 500;
+}
+/*# sourceMappingURL=sass.min.css.map */
